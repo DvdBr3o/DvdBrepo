@@ -6,6 +6,7 @@ package("asyncio")
     add_versions("1.0.0", "8acad8fb12307e0de099f1e354f2eff30b1593aa")
 
     add_deps("cmake")
+    add_includedirs("include")
 
     on_install(function(package)
         import("package.tools.cmake").install(package)
