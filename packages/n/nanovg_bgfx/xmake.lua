@@ -1,5 +1,4 @@
 package("nanovg_bgfx")
-    set_kind("static")
     set_homepage("https://github.com/DvdBr3o/nanovg_bgfx")
     set_description("The nanovg utilities under bgfx.")
     add_urls("https://github.com/DvdBr3o/nanovg_bgfx.git")
