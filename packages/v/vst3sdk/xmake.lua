@@ -9,6 +9,8 @@ package("vst3sdk")
 
     add_configs("vstgui", { description = "Add VSTGUI Support", default = true, type = "boolean" })
 
+    add_includedirs(".")
+
     on_install(function(package)
         local configs = {}
         table.insert(configs, "-DSMTG_ADD_VSTGUI=" .. (package:config("vstgui") and "ON" or "OFF"))
