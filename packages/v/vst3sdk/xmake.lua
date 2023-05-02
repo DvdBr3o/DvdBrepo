@@ -11,6 +11,6 @@ package("vst3sdk")
 
     on_install(function(package)
         local configs = {}
-        table.insert(configs, "-DSMTG_ADD_VST3_PLUGINS_SAMPLES=" .. package:config("vstgui") and "ON" or "OFF")
+        table.insert(configs, "-DSMTG_ADD_VSTGUI=" .. (package:config("vstgui") and "ON" or "OFF"))
         import("package.tools.cmake").install(package, configs)
     end)
