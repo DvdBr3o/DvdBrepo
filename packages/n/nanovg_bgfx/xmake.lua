@@ -1,8 +1,0 @@
-package("nanovg_bgfx")
-    set_homepage("https://github.com/DvdBr3o/nanovg_bgfx")
-    set_description("The nanovg utilities under bgfx.")
-    add_urls("https://github.com/DvdBr3o/nanovg_bgfx.git")
-    add_versions("2023.05.01", "8030003c653caf1af9851997b59767ef08eb6e2b")
-    on_install(function(package)
-        import("package.tools.xmake").install(package)
-    end)
