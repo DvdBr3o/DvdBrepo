@@ -21,7 +21,7 @@ package("vst3sdk")
         os.cp("pluginterfaces", package:installdir("include"))
         os.cp("public.sdk", package:installdir("include"))
         os.cp("vstgui4", package:installdir("include"))
-        package:add("includedirs", package:installdir("include"))
+        package:add("includedirs", "include")
 
         import("package.tools.cmake").install(package, configs)
     end)
