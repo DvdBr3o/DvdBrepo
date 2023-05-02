@@ -16,5 +16,9 @@ package("vst3sdk")
         table.insert(configs, "-DBUILD_SHARED_LIBS=" .. (package:config("shared") and "ON" or "OFF"))
         table.insert(configs, "-DSMTG_ADD_VSTGUI=" .. (package:config("vstgui") and "ON" or "OFF"))
         table.insert(configs, "-DSMTG_ADD_VST3_PLUGINS_SAMPLES=" .. (package:config("samples") and "ON" or "OFF"))
+
+        os.cp("./**.h", package:installdir("include"))
+        package:add("includedirs", "include")
+
         import("package.tools.cmake").install(package, configs)
     end)
