@@ -8,11 +8,13 @@ package("vst3sdk")
     add_deps("cmake")
 
     add_configs("vstgui", { description = "Add VSTGUI Support", default = true, type = "boolean" })
-
-    add_includedirs(".")
+    add_configs("samples", { description = "Add VST3 Plug-ins Samples to the solution", default = false, type = "boolean" })
 
     on_install(function(package)
         local configs = {}
+        table.insert(configs, "-DCMAKE_BUILD_TYPE=" .. (package:debug() and "Debug" or "Release"))
+        table.insert(configs, "-DBUILD_SHARED_LIBS=" .. (package:config("shared") and "ON" or "OFF"))
         table.insert(configs, "-DSMTG_ADD_VSTGUI=" .. (package:config("vstgui") and "ON" or "OFF"))
+        table.insert(configs, "-DSMTG_ADD_VST3_PLUGINS_SAMPLES=" .. (package:config("samples") and "ON" or "OFF"))
         import("package.tools.cmake").install(package, configs)
     end)
