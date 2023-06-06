@@ -1,5 +1,6 @@
-# DvdBrepo
-The remote repository storing xmake packages I use yet not contained by xrepo.
+<h1 align="center"> DvdBrepo </h1>
+
+<div align="center"> The remote repository storing xmake packages I use yet not contained by xrepo. </div>
 
 
 
@@ -23,11 +24,11 @@ Then you are good to go:
 
 ```lua
 -- xmake.lua --
--- Below DvdBrepo takes package `nanovg_bgfx` as an example.
-add_requires("nanovg_bgfx")
+-- Below DvdBrepo takes package `vst3sdk` as an example.
+add_requires("vst3sdk")
 
 target("my_target")
 	-- ...
-	add_packages("nanovg_bgfx")
+	add_packages("vst3sdk")
 ```
 
